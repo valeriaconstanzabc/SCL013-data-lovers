@@ -26,22 +26,70 @@
       </header>
     </div>
 
-    <!--<div id="welcome">   
-
-      <div id="background1"></div>
-
-      <div id="cuerpo">
-        <h1 id="mainTitle">Guía muggle del mundo mágico</h1>
-        <p id="instructions">¡Bienvenidos a la guía muggle! aquí encontrarás toda la información sobre los personajes del mundo de Harry Potter. <br><br> ¡Descúbrelos y anímate a ser parte de este mundo de fantasía!</p>
-      </div>
-      
-      
-    </div>
-    -->
-
     <div id="homePage">
-      <div id="background2"></div>
-      <div id="root"></div>
+      <header id="header2">
+        <div id="logo">
+          <h1>Guía muggle del mundo mágico</h1>
+        </div>
+      </header>
+      <nav id="nav">
+        <div id="az">
+          <select id="alphabeticalSearch">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+          </select>
+        </div>
+      </nav>
+      <section id="section">
+        <aside id="searchCriteria">
+          <label for="cSearch">Busca tu personaje por nombre:</label>
+          <input type="search" id="search" name="search">
+
+          <select id="genderSearch">
+            <option value="male">Hombre</option>
+            <option value="female">Mujer</option>
+          </select>
+
+          <select id="houseSearch">
+            <option value="griffindor">Griffindor</option>
+            <option value="slytherin">Slytherin</option>
+            <option value="ravenclaw">Ravenclaw</option>
+            <option value="hufflepuff">Hufflepuff</option>
+          </select>
+
+          <select id="ancestrySearch">
+            <option value="muggleBorn">Sangre sucia</option>
+            <option value="pureBlood">Sangre limpia</option>
+            <option value="halfBlood">Sangre mestiza</option>
+          </select>
+
+          <select id="staffSearch">
+            <option value="teacher">Profesor</option>
+            <option value="student">Estudiante</option>
+          </select>
+        </aside>
+        <div id="characters">
+          <div id="root">
+            <img src="/imagenes/harry.jpg">
+          </div>
+          <div id="root">
+            <img src="/imagenes/hermione.jpeg">
+          </div>
+          <div id="root">
+            <img src="/imagenes/ron.jpg">
+          </div>
+          <div id="root">
+            <img src="/imagenes/mcgonagall.jpg">
+          </div>
+          <div id="navigation"></div>
+        </div>
+      </section>
+      <footer id="footer">
+        <div id="creators">
+          <h1>BlaBlaBla</h1>
+        </div>
+      </footer>
+
     </div>    
     
     <script src="main.js" type="module"></script>

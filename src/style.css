@@ -1,5 +1,5 @@
 *{
-    margin:0px;
+    margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
@@ -81,7 +81,7 @@
                 /*background: #EA5455;*/
                 background: url("/imagenes/sombrero.png");
                 background-size: 200px 200px;
-                background-repeat: no-repeat;*/
+                background-repeat: no-repeat;
 
                 transition: 0.3s;
             }
@@ -119,3 +119,88 @@
         line-height: 80px;
     }
 }
+
+
+/*------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------*/
+
+#homePage{
+    display: flex;
+    
+}
+    #header2{
+        background: #000;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+        #logo{
+            background: rgb(221, 75, 75);
+            text-align: center;
+
+            font-family: 'Fontdiner Swanky', cursive;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 7px; /*PARA ESPACIAR LAS LETRAS DEL TÍTULO*/
+            font-size: 25px;
+            line-height: 100px;
+            color: rgb(255, 255, 255);
+        }
+
+    #nav{
+        background: #000;
+        display: flex;
+        justify-content: flex-end;
+    }
+        #az{
+            background: rgb(221, 75, 75);
+        }
+
+    #section{
+        background: #000;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+        #searchCriteria{
+            background: rgb(221, 75, 75);
+            flex-direction: column;
+            display: inline-flex;
+        }
+
+        #characters{
+            background: rgb(221, 75, 75);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+            #root{
+                background: rgb(75, 221, 165);
+                
+            }
+
+            #root > img{
+                width: 270px;
+                height: 270px;
+                border-radius: 50%;
+            }
+
+            #navigation{
+                background: rgb(75, 221, 165);
+            }
+    
+    #footer{
+        background: #000;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+    }
+        #creators{
+            background: rgb(221, 75, 75);
+            text-align: end;
+        }
