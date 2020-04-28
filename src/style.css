@@ -1,0 +1,121 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#welcome{
+    display: flex;
+    flex-flow: column nowrap;
+    background: url("/imagenes/FONDO.jpg");
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+
+    #header{
+        display: flex;
+        padding: 0px 0px 0px 80px;
+    }
+
+        #contenedor{
+            /*background: #2D4059;*/
+           
+            flex-flow: column nowrap;
+            height: 768px;
+        }
+            #mainTitle{
+                height: 450px;
+                width: 85%;
+
+                flex-flow: column nowrap;
+                display: flex;
+	            justify-content: flex-end;
+                align-items: flex-start;
+                align-content: stretch; 
+                
+
+                font-family: 'Fontdiner Swanky', cursive;
+                font-style: normal;
+                font-weight: normal;
+                letter-spacing: 7px; /*PARA ESPACIAR LAS LETRAS DEL TÍTULO*/
+                font-size: 35px;
+                line-height: 100px;
+                color: rgb(255, 255, 255);
+                
+                /*background: #EA5455;*/
+            }
+
+            #instructions{   
+                height: 280px;
+                width: 50%;
+
+                flex-flow: column nowrap;
+                display: flex;
+                justify-content: flex-start;
+                align-content: center;
+                
+                font-family: 'Abel', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 20px;
+                color: #D8D2D2;
+
+                /*background: #EA5455;*/
+            }
+        
+        #siguiente{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: center;
+
+            width: 400px;
+
+            /*background: #2D4059;*/
+        }
+            #enterButton{
+                width: 200px;
+                height: 200px;
+                /*background: #EA5455;*/
+                background: url("/imagenes/sombrero.png");
+                background-size: 200px 200px;
+                background-repeat: no-repeat;*/
+
+                transition: 0.3s;
+            }
+            #enterButton:hover{
+                transform: scale(1.2);
+            }
+
+@media all and (max-width: 600px){
+    #header{
+        flex-direction: column;
+        padding: 0px 0px 0px 40px;
+    } 
+    #mainTitle{
+        text-align: center;
+    }
+    #instructions{
+        text-align: center;
+        width: 85%;
+    }
+    #enterButton{
+        width: 85%;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    #siguiente{
+        width: 250px;
+        padding: 0px 0px 0px 35px;
+    }
+    
+}
+
+@media all and (max-width: 360rem) {
+    #mainTitle{
+        font-size: 30px;
+        line-height: 80px;
+    }
+}
