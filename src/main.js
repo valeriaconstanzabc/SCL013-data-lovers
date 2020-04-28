@@ -5,7 +5,7 @@ import data from './data/pokemon/pokemon.js';
 
 console.log(example, data);
 
-document.getElementById("welcome").style.display="block"
+document.getElementById("homePage").style.display = "none";
 
 let enterButton = document.getElementById("enterButton");
 enterButton.addEventListener('click', ()=>{
