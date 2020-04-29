@@ -129,18 +129,26 @@
 
 #homePage{
     display: flex;
-    
+    background: url("imagenes/voldemort.jpg");
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+
+    /*background: #000;*/
 }
     #header2{
-        background: #000;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: center;
+        
+        /*background: #000;*/
     }
         #logo{
-            background: rgb(221, 75, 75);
-            text-align: center;
-
+            
             font-family: 'Fontdiner Swanky', cursive;
             font-style: normal;
             font-weight: normal;
@@ -148,23 +156,28 @@
             font-size: 25px;
             line-height: 100px;
             color: rgb(255, 255, 255);
+
+            /*background: rgb(221, 75, 75);*/
         }
 
     #nav{
-        background: #000;
+                    
         display: flex;
         justify-content: flex-end;
+        /*background: #000;*/
     }
         #az{
             background: rgb(221, 75, 75);
         }
 
     #section{
-        background: #000;
+        
         display: flex;
         align-items: flex-start;
         flex-direction: row;
         justify-content: space-around;
+
+        /*background: #000;*/
     }
         #searchCriteria{
             background: rgb(221, 75, 75);
@@ -173,27 +186,42 @@
         }
 
         #characters{
-            background: rgb(221, 75, 75);
+            
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            
+            /*background: rgb(221, 75, 75);*/
         }
 
-            #root{
-                background: rgb(75, 221, 165);
+            .root{
+                
                 display: flex;
-                flex-wrap: wrap;                
-            }
+                flex-wrap: wrap;
+                flex-direction: column;
+                
+                font-family: 'Abel', sans-serif;
+                text-align: center;
+                font-size: 18px;
+                line-height: 30px;
+                color: #D8D2D2;
+                padding: 10px 80px 0px 80px;
 
-            #root > img{
+                /*background: rgb(75, 221, 165);*/
+            }
+            
+            .root > img{
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
             }
 
-            #navigation{
+
+            /*#navigation{
                 background: rgb(75, 221, 165);
-            }
+            }*/
     
     #footer{
         background: #000;
