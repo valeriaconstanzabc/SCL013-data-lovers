@@ -7,7 +7,7 @@
 #welcome{
     display: flex;
     flex-flow: column nowrap;
-    background: url("/imagenes/FONDO.jpg");
+    background: url("imagenes/FONDO.jpg");
     background-position: center;
     background-attachment: contain;
     background-size: cover;
@@ -79,7 +79,7 @@
                 width: 200px;
                 height: 200px;
                 /*background: #EA5455;*/
-                background: url("/imagenes/sombrero.png");
+                background: url("imagenes/sombrero.png");
                 background-size: 200px 200px;
                 background-repeat: no-repeat;
 
@@ -181,12 +181,13 @@
 
             #root{
                 background: rgb(75, 221, 165);
-                
+                display: flex;
+                flex-wrap: wrap;                
             }
 
             #root > img{
-                width: 270px;
-                height: 270px;
+                width: 200px;
+                height: 200px;
                 border-radius: 50%;
             }
 
