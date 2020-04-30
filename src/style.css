@@ -15,14 +15,14 @@
 
     #header{
         display: flex;
-        padding: 0px 0px 0px 80px;
+        padding: 0px 0px 50px 80px;
     }
 
         #contenedor{
             /*background: #2D4059;*/
            
             flex-flow: column nowrap;
-            height: 768px;
+            height: 704px;
         }
             #mainTitle{
                 height: 450px;
@@ -131,8 +131,9 @@
     display: flex;
     background: url("imagenes/voldemort.jpg");
     background-position: center;
-    background-attachment: contain;
+    background-attachment: fixed; /*fixed para que quede fija la imagen*/
     background-size: cover;
+    padding: 30px 80px 0px 80px;
 
     /*background: #000;*/
 }
@@ -221,6 +222,7 @@
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
+                object-fit: cover; /*para que la imagen no quede chatita*/
                 cursor: pointer;
             }
             .root > img:hover{
