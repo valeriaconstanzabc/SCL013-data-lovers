@@ -4,8 +4,9 @@ const dataPotter=data;
 let dataArray=Object.values(dataPotter);
 
 const root=document.getElementById("root");
+
 for(let i=0;i<dataArray.length;i++){    
-   document.getElementById('characters').innerHTML += `
+   let characters = document.getElementById('characters').innerHTML += `
    <div class="root">
         <img src="${dataArray[i].image}" alt="">
         <h3>${dataArray[i].name}</h3>
@@ -13,35 +14,40 @@ for(let i=0;i<dataArray.length;i++){
     </div>`;
 }
 
-
-for(let i=0;i<dataArray.length;i++){    
-    document.getElementById('characters').innerHTML += `
-    <div class="root">
-        <img src="${dataArray[i].image}" alt="">
-        <h3>${dataArray[i].name}</h3>
-        <p>Especie: ${dataArray[i].house}</p>
-    </div>`;
+function vaciar() {
+    characters.innerHTML = "";
 }
 
 const select = document.getElementById("alphabeticalSearch");
-
 select.addEventListener("change", () =>{
+    vaciar();
     let condition = select.options[select.selectedIndex].index;
-    console.log(condition);
-
     if(condition==1){
         //Función que ordena alfabéticamente
         dataArray.sort((a, b) => a.name.localeCompare(b.name));
-        console.log(dataArray);
-    }
-    if(condition==2){
+        
+        for(let i=0;i<dataArray.length;i++){    
+            document.getElementById('characters').innerHTML += `
+            <div class="root">
+                <img src="${dataArray[i].image}" alt="">
+                <h3>${dataArray[i].name}</h3>
+                <p>Especie: ${dataArray[i].house}</p>
+            </div>`;
+        }
+    }if(condition==2){
         //Arreglo con orden alfabético descendente
         const dataArrayReverse=dataArray.reverse();
-        console.log(dataArrayReverse);
+        
+        for(let i=0;i<dataArrayReverse.length;i++){    
+            document.getElementById('characters').innerHTML += `
+            <div class="root">
+                <img src="${dataArrayReverse[i].image}" alt="">
+                <h3>${dataArrayReverse[i].name}</h3>
+                <p>Especie: ${dataArrayReverse[i].house}</p>
+            </div>`;
+        }
     }
-
 })
-
 
 
 document.getElementById("homePage").style.display = "none";

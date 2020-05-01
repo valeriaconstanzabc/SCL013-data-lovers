@@ -179,54 +179,65 @@
 
         /*background: #000;*/
     }
-        #searchCriteria{
+
+        #searchCriteriaContenedor{
+            padding: 10px;
+            margin-right: 30px;
+
             background: rgb(221, 75, 75);
-            flex-direction: column;
-            display: inline-flex;
         }
-
-        #characters{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: flex-start;
-            
-            /*background: rgb(221, 75, 75);*/
-        }
-
-            .root{
-                display: flex;
-                flex-wrap: wrap;
+            #searchCriteria{
+                width: 300px;
+                height: 350px;
                 flex-direction: column;
+                display: inline-flex;
+                padding: 30px;
                 
-                font-family: 'Abel', sans-serif;
-                text-align: center;
-                font-size: 18px;
-                line-height: 30px;
-                color: #D8D2D2;
-                padding: 10px 80px 0px 80px;
-                
-                /*background: rgb(75, 221, 165);*/
-            }
-            
-            .root > img{
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-                object-fit: cover; /*para que la imagen no quede chatita*/
-                cursor: pointer;
-            }
-            .root > img:hover{
-                transition: 0.4s;
-                box-shadow: 0 5px 50px 0;
-                transform: scale(0.9);
+                /*background: rgb(23, 248, 248);*/
             }
 
+            #characters{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-start;
+                
+                /*background: rgb(221, 75, 75);*/
+            }
 
-            /*#navigation{
-                background: rgb(75, 221, 165);
-            }*/
+                .root{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    
+                    font-family: 'Abel', sans-serif;
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 30px;
+                    color: #D8D2D2;
+                    padding: 10px 50px 0px 50px;
+                    
+                    /*background: rgb(75, 221, 165);*/
+                }
+                
+                .root > img{
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    object-fit: cover; /*para que la imagen no quede chatita*/
+                    cursor: pointer;
+                }
+                .root > img:hover{
+                    transition: 0.4s;
+                    box-shadow: 0 5px 50px 0;
+                    transform: scale(0.9);
+                }
+
+
+                /*#navigation{
+                    background: rgb(75, 221, 165);
+                }*/
     
     #footer{
         background: #000;

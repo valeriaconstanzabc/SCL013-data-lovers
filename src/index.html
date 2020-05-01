@@ -35,40 +35,42 @@
       <nav id="nav">
         <div id="az">
           <select id="alphabeticalSearch">
-            <option value="order">Ordenar alfabéticamente</option>
+            <option value="order">Ordenar</option>
             <option value="a-z">A-Z</option>
             <option value="z-a">Z-A</option>
           </select>
         </div>
       </nav>
       <section id="section">
-        <aside id="searchCriteria">
-          <label for="cSearch">Busca tu personaje por nombre:</label>
-          <input type="search" id="search" name="search">
-
-          <select id="genderSearch">
-            <option value="male">Hombre</option>
-            <option value="female">Mujer</option>
-          </select>
-
-          <select id="houseSearch">
-            <option value="griffindor">Griffindor</option>
-            <option value="slytherin">Slytherin</option>
-            <option value="ravenclaw">Ravenclaw</option>
-            <option value="hufflepuff">Hufflepuff</option>
-          </select>
-
-          <select id="ancestrySearch">
-            <option value="muggleBorn">Sangre sucia</option>
-            <option value="pureBlood">Sangre limpia</option>
-            <option value="halfBlood">Sangre mestiza</option>
-          </select>
-
-          <select id="staffSearch">
-            <option value="teacher">Profesor</option>
-            <option value="student">Estudiante</option>
-          </select>
-        </aside>
+        <div id="searchCriteriaContenedor">
+          <aside id="searchCriteria">
+            <label for="cSearch">Busca tu personaje por nombre:</label>
+            <input type="search" id="search" name="search">
+  
+            <select id="genderSearch">
+              <option value="male">Hombre</option>
+              <option value="female">Mujer</option>
+            </select>
+  
+            <select id="houseSearch">
+              <option value="griffindor">Griffindor</option>
+              <option value="slytherin">Slytherin</option>
+              <option value="ravenclaw">Ravenclaw</option>
+              <option value="hufflepuff">Hufflepuff</option>
+            </select>
+  
+            <select id="ancestrySearch">
+              <option value="muggleBorn">Sangre sucia</option>
+              <option value="pureBlood">Sangre limpia</option>
+              <option value="halfBlood">Sangre mestiza</option>
+            </select>
+  
+            <select id="staffSearch">
+              <option value="teacher">Profesor</option>
+              <option value="student">Estudiante</option>
+            </select>
+          </aside>
+        </div>
         <div id="characters"></div>
         <div id="navigation"></div>
       </section>
