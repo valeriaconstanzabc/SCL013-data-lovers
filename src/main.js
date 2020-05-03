@@ -10,7 +10,7 @@ for(let i=0;i<dataArray.length;i++){
    <div class="root">
         <img src="${dataArray[i].image}" alt="">
         <h3>${dataArray[i].name}</h3>
-        <p>Especie: ${dataArray[i].house}</p>
+        <p>${dataArray[i].house}</p>
     </div>`;
 }
 
@@ -31,7 +31,7 @@ select.addEventListener("change", () =>{
             <div class="root">
                 <img src="${dataArray[i].image}" alt="">
                 <h3>${dataArray[i].name}</h3>
-                <p>Especie: ${dataArray[i].house}</p>
+                <p>${dataArray[i].house}</p>
             </div>`;
         }
     }if(condition==2){
@@ -43,7 +43,7 @@ select.addEventListener("change", () =>{
             <div class="root">
                 <img src="${dataArrayReverse[i].image}" alt="">
                 <h3>${dataArrayReverse[i].name}</h3>
-                <p>Especie: ${dataArrayReverse[i].house}</p>
+                <p>${dataArrayReverse[i].house}</p>
             </div>`;
         }
     }
