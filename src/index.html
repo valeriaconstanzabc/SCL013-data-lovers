@@ -26,7 +26,7 @@
       </header>
     </div>
 
-    <div id="homePage">
+    <div id="homePage"><!--padre-->
       <header id="header2">
         <div id="logo">
           <h1>Guía muggle del mundo mágico</h1>
@@ -35,45 +35,60 @@
       <nav id="nav">
         <div id="az">
           <select id="alphabeticalSearch">
+            <option value="order">Ordenar</option>
             <option value="a-z">A-Z</option>
             <option value="z-a">Z-A</option>
           </select>
         </div>
       </nav>
       <section id="section">
-        <aside id="searchCriteria">
-          <label for="cSearch">Busca tu personaje por nombre:</label>
-          <input type="search" id="search" name="search">
+        <div id="searchCriteriaContenedor">
+          <aside id="searchCriteria">
+            <div id="favoriteCharacter">
+              <label for="cSearch">Busca tu personaje favorito:</label>
+              <input type="search" id="search" name="search">
+              <button id="searchName">buscar</button>
+            </div>
+            
+            <label for="gSearch">Filtrar por género:</label>
+            <select id="genderSearch">
+              <option value="male">Hombre</option>
+              <option value="female">Mujer</option>
+            </select>
+  
+            <label for="hSearch">Filtrar por casa:</label>
+            <select id="houseSearch">
+              <option value="griffindor">Griffindor</option>
+              <option value="slytherin">Slytherin</option>
+              <option value="ravenclaw">Ravenclaw</option>
+              <option value="hufflepuff">Hufflepuff</option>
+            </select>
+  
+            <label for="aSearch">Filtrar por linaje:</label>
+            <select id="ancestrySearch">
+              <option value="muggleBorn">Sangre sucia</option>
+              <option value="pureBlood">Sangre limpia</option>
+              <option value="halfBlood">Sangre mestiza</option>
+            </select>
+  
+            <label for="sSearch">Filtrar por rol:</label>
+            <select id="staffSearch">
+              <option value="teacher">Profesor</option>
+              <option value="student">Estudiante</option>
+            </select>
 
-          <select id="genderSearch">
-            <option value="male">Hombre</option>
-            <option value="female">Mujer</option>
-          </select>
-
-          <select id="houseSearch">
-            <option value="griffindor">Griffindor</option>
-            <option value="slytherin">Slytherin</option>
-            <option value="ravenclaw">Ravenclaw</option>
-            <option value="hufflepuff">Hufflepuff</option>
-          </select>
-
-          <select id="ancestrySearch">
-            <option value="muggleBorn">Sangre sucia</option>
-            <option value="pureBlood">Sangre limpia</option>
-            <option value="halfBlood">Sangre mestiza</option>
-          </select>
-
-          <select id="staffSearch">
-            <option value="teacher">Profesor</option>
-            <option value="student">Estudiante</option>
-          </select>
-        </aside>
+            <div id="returnButton">
+              <div id="backButton" class="backButton" role="link" onclick="window.location='index.html'"></div>
+            </div>
+          </aside>
+        </div>
         <div id="characters"></div>
-        <div id="navigation"></div>
+        <!-- <div id="navigation"></div> -->
       </section>
+
       <footer id="footer">
         <div id="creators">
-          <h1>BlaBlaBla</h1>
+          <h1>© Copyright | 2020. Todos los derechos reservados. | By Constanza Oreste - Valeria Brito / Laboratoria, Chile.</h1>
         </div>
       </footer>
 

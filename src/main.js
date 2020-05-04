@@ -1,20 +1,54 @@
 import data from './data/potter/potter.js'
 
 const dataPotter=data;
-const dataArray=Object.values(dataPotter);
+let dataArray=Object.values(dataPotter);
 
 const root=document.getElementById("root");
+
 for(let i=0;i<dataArray.length;i++){    
-   
-   /*root.innerHTML += `<img src="${dataArray[i].image}" alt="">`
-   root.innerHTML += `<p>Nombre: ${dataArray[i].name} <br> ${dataArray[i].house}</p>`*/
-   document.getElementById('characters').innerHTML += `
+   let characters = document.getElementById('characters').innerHTML += `
    <div class="root">
         <img src="${dataArray[i].image}" alt="">
         <h3>${dataArray[i].name}</h3>
-        <p>Especie: ${dataArray[i].house}</p>
+        <p>${dataArray[i].house}</p>
     </div>`;
 }
+
+function vaciar() {
+    characters.innerHTML = "";
+}
+
+const select = document.getElementById("alphabeticalSearch");
+select.addEventListener("change", () =>{
+    vaciar();
+    let condition = select.options[select.selectedIndex].index;
+    if(condition==1){
+        //Función que ordena alfabéticamente
+        dataArray.sort((a, b) => a.name.localeCompare(b.name));
+        
+        for(let i=0;i<dataArray.length;i++){    
+            document.getElementById('characters').innerHTML += `
+            <div class="root">
+                <img src="${dataArray[i].image}" alt="">
+                <h3>${dataArray[i].name}</h3>
+                <p>${dataArray[i].house}</p>
+            </div>`;
+        }
+    }if(condition==2){
+        //Arreglo con orden alfabético descendente
+        const dataArrayReverse=dataArray.reverse();
+        
+        for(let i=0;i<dataArrayReverse.length;i++){    
+            document.getElementById('characters').innerHTML += `
+            <div class="root">
+                <img src="${dataArrayReverse[i].image}" alt="">
+                <h3>${dataArrayReverse[i].name}</h3>
+                <p>${dataArrayReverse[i].house}</p>
+            </div>`;
+        }
+    }
+})
+
 
 document.getElementById("homePage").style.display = "none";
 
