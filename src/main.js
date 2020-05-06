@@ -10,7 +10,7 @@ enterButton.addEventListener('click', ()=>{
 });
 
 
-//Traimos todos los personajes al inicio de la página
+//Traemos todos los personajes al inicio de la página
 const dataPotter=data;
 let dataArray=Object.values(dataPotter);
 const characters = document.getElementById("characters");
@@ -29,8 +29,11 @@ for(let i=0;i<dataArray.length;i++){
 const select = document.getElementById("alphabeticalSearch");
 select.addEventListener("change", () =>{
     characters.innerHTML = "";
+    let dataArray=Object.values(dataPotter);
     let condition = select.options[select.selectedIndex].index;
     let orderResult = orderData(dataArray, condition);
+    
+    console.log(orderResult);
     for(let i=0;i<orderResult.length;i++){    
         let characters = document.getElementById('characters').innerHTML += `
         <div id="boton" class="root">
