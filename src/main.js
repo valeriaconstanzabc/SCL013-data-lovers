@@ -29,12 +29,12 @@ for(let i=0;i<dataArray.length;i++){
 const select = document.getElementById("alphabeticalSearch");
 select.addEventListener("change", () =>{
     characters.innerHTML = "";
-    
+    dataArray=Object.values(dataPotter);
     let condition = select.options[select.selectedIndex].index;
     let orderResult = orderData(dataArray, condition);
     
     for(let i=0;i<orderResult.length;i++){    
-        let characters = document.getElementById('characters').innerHTML += `
+        characters.innerHTML += `
         <div id="boton" class="root">
              <img src="${orderResult[i].image}" alt="" class="imgButton">
              <h3>${orderResult[i].name}</h3>
@@ -104,5 +104,5 @@ function createModal () {
               modalContainer.innerHTML="";
             }
         }
-    };   
-};
+    }   
+}

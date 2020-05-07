@@ -1,7 +1,5 @@
 // estas funciones son de ejemplo
-export const anotherExample = () => {
-  return 'OMG';
-};
+
 export const orderData = (dataArray, condition) => {
   let filterOrder = dataArray; //Arreglo nuevo donde guardaremos persojes ordenados
   if(condition==0){
