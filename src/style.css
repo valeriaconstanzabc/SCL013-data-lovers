@@ -362,16 +362,17 @@
 
 .modalContent {
     background-color: #C4C4C4;
-   margin: auto; 
+    margin: auto; 
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #888;
     width: 50%;
     height: 480px;
+    
 }
-
-    .modalCharacters{
+    .marco{
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         
         border: #000 4px solid;
@@ -380,9 +381,16 @@
         width: 100%;
         height: 100%;
     }
+    .modalCharacters{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /*background: palevioletred;*/
+    }
 
         .characterInformation{
-            padding: 25px 0px 0px 30px;
+            padding: 0px 0px 0px 30px;
             font-family: 'Abel', sans-serif;
             font-size: 40px;
             line-height: 50px;
@@ -400,8 +408,8 @@
             }
         
         .characterInformation2{
-            padding: 30px 30px 30px 70px;
-            width: 70%;
+            padding: 5px 30px 30px 70px;
+            
 
             font-family: 'Abel', sans-serif;
             font-size: 20px;
@@ -411,12 +419,18 @@
             /*background: green;*/
         }
 
+        .x{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
         .close {
             color: #575353;
             float: right;
             font-size: 35px;
             font-weight: bold;
-            
+
             /*background: yellow;*/
         }
             .close:hover, .close:focus {
@@ -431,27 +445,54 @@
 -------------------------------------------------------------------------------
 -----------------------------------------------------------------------------*/
 
-@media all and (max-width: 1460px){
-    #modalContent{
-        height: 495px;
-    }
+
+@media all and (max-width: 1340px){
+    #modalContent{height: 540px;}
 }
-@media all and (max-width: 1330px){
+
+@media all and (max-width: 1273px){
+    #modalContent{height: 600px;}
+}
+
+@media all and (max-width: 1130px){
+    .modalCharacters{
+        flex-direction: column;
+    }
     #modalContent{
-        height: 500px;
+        height: 830px;
+        width: 60%;
+    }
+    .characterInformation2{
+        padding-top: 30px;
+        text-align: center;
+    }
+    .close{
+        padding-left: 30px;
     }
 }
 
 @media all and (max-width: 887px){
-    #header2{
-        height: 230px;
+    #header2{height: 230px;}
+}
+
+@media all and (max-width: 800px){
+    #section{
+        flex-wrap: wrap;
+    }
+    #homePage{
+        padding: 50px 70px 30px 90px;
+    }
+    #modalContent{
+        width: 70%;
     }
 }
 
 @media all and (max-width: 727px){
-    #header2{
-        height: 270px;
-    }
+    #header2{height: 270px;}   
+}
+
+@media all and (max-width: 632px){
+    #modalContent{width: 75%;}
 }
 
 @media all and (max-width: 606px){
@@ -463,18 +504,6 @@
     }
 }
 
-@media all and (max-width: 800px){
-    #section{
-        flex-wrap: wrap;
-    }
-    #homePage{
-        padding: 50px 70px 30px 90px;
-    }
-    .modalContent{
-        width: 90%;
-    }
-}
-
 @media all and (max-width: 663px){
     #homePage{
         padding: 50px 70px 30px 90px;
@@ -483,26 +512,31 @@
         height: 90px;
         width: 100%;
     }
-    
 }
-@media all and (max-width: 425px){
-    .modalContent{
-        height: 450px;
+
+@media all and (max-width: 580px){
+    #modalContent{
+        width: 80%;
+        height: 900px;
     }
-    
-    .modalCharacters{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+}
+
+@media all and (max-width: 488px){
+    #modalContent{
+        height: 1000px;
     }
     .characterInformation{
-        padding: 10px 0px 0px 10px;
-        
-
+        padding-left: 10px;
     }
     .characterInformation2{
-        padding: 10px 0px 0px 10px;
-        
+        padding-left: 30px;
     }
-    
+}
+
+@media all and (max-width: 425px){
+    #modalContent{height: 1100px;}   
+}
+
+@media all and (max-width: 380px){
+    #modalContent{height: 1150px;}
 }

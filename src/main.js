@@ -29,11 +29,10 @@ for(let i=0;i<dataArray.length;i++){
 const select = document.getElementById("alphabeticalSearch");
 select.addEventListener("change", () =>{
     characters.innerHTML = "";
-    let dataArray=Object.values(dataPotter);
+    
     let condition = select.options[select.selectedIndex].index;
     let orderResult = orderData(dataArray, condition);
     
-    console.log(orderResult);
     for(let i=0;i<orderResult.length;i++){    
         let characters = document.getElementById('characters').innerHTML += `
         <div id="boton" class="root">
@@ -62,7 +61,12 @@ function createModal () {
             modal.style.display = "block";
 
             modalContainer.innerHTML += `
+            <div class="marco">
+            <div class="x">
+            <span class="close">&times;</span>
+            </div>
             <div  class="modalCharacters">
+            
             <div class="characterInformation">
             <img src="${dataArray[i].image}" alt="" class="imgButton">
             <h3>${dataArray[i].name}</h3>
@@ -84,7 +88,7 @@ function createModal () {
             <p>Longitud: ${dataArray[i].wand.length}</p>
             <p>Patronus: ${dataArray[i].patronus}</p>
             </div>
-            <span class="close">&times;</span>
+            </div>
             </div>`;
 
             let span = document.getElementsByClassName("close")[0];
