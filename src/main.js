@@ -47,58 +47,58 @@ select.addEventListener("change", () =>{
 
 //Creamos el modal de cada personaje con su correspondiente información
 function createModal () {
-    let modalContainer = document.getElementById("modalContent");
-    let modal=document.getElementById("myModal");
-    let imgButton=document.getElementsByClassName("imgButton");
-    modal.style.display = "none";
+    let modal=document.getElementById("myModal"); //Modal general html
+    let modalContainer = document.getElementById("modalContent"); //Modal cuadrito blanco html
+    let imgButton=document.getElementsByClassName("imgButton"); //imagen que actua como boton. Ingresada en el js
+    modal.style.display = "none"; //Para esconder el modal general al cargar la página
 
-    for(let i=0; i<imgButton.length; i++){
-        let img=imgButton[i];
+    for(let i=0; i<imgButton.length; i++){ //recorremos el for de las imagenes que creamos
+        let img=imgButton[i]; //guardamos cada imagen en una variable con posición i
         
-        img.addEventListener ('click', ()=>{
-            
-            let modalContainer = document.getElementById("modalContent");
-            modal.style.display = "block";
+        img.addEventListener ('click', ()=>{ //agregamos el evento a la imagen
+            modal.style.display = "block"; //al hacer click traemos el modal general
 
-            modalContainer.innerHTML += `
-            <div class="marco">
-            <div class="x">
-            <span class="close">&times;</span>
-            </div>
-            <div  class="modalCharacters">
-            
-            <div class="characterInformation">
-            <img src="${dataArray[i].image}" alt="" class="imgButton">
-            <h3>${dataArray[i].name}</h3>
-            <p>${dataArray[i].house}</p>
-            </div>
-            <div class="characterInformation2">
-            <p>Especie: ${dataArray[i].species}</p>
-            <p>Género: ${dataArray[i].gender}</p>
-            <p>Fecha de nacimiento: ${dataArray[i].dateOfBirth}</p>
-            <p>Año de nacimiento: ${dataArray[i].yearOfBirth}</p>
-            <p>Ascendencia: ${dataArray[i].ancestry}</p>
-            <p>Color de ojos: ${dataArray[i].eyeColour}</p>
-            <p>Color de cabello: ${dataArray[i].hairColour}</p>
-            <p>Actor/Actriz: ${dataArray[i].actor}</p>
-            <p>Estado: ${dataArray[i].alive}</p><br>
-            <h4>Varita mágica</h4>
-            <p>Madera: ${dataArray[i].wand.wood}</p>
-            <p>Núcleo: ${dataArray[i].wand.core}</p>
-            <p>Longitud: ${dataArray[i].wand.length}</p>
-            <p>Patronus: ${dataArray[i].patronus}</p>
-            </div>
-            </div>
+            //creamos el modal html en el js. /modal cuadrito blanco
+            modalContainer.innerHTML += ` 
+            <div class="frame">
+                <div class="x">
+                    <span class="close">&times;</span>
+                </div>
+
+                <div  class="modalCharacters">
+                    <div class="characterInformation">
+                        <img src="${dataArray[i].image}" alt="" class="imgButton">
+                        <h3>${dataArray[i].name}</h3>
+                        <p>${dataArray[i].house}</p>
+                    </div>
+
+                    <div class="characterInformation2">
+                        <p>Especie: ${dataArray[i].species}</p>
+                        <p>Género: ${dataArray[i].gender}</p>
+                        <p>Fecha de nacimiento: ${dataArray[i].dateOfBirth}</p>
+                        <p>Año de nacimiento: ${dataArray[i].yearOfBirth}</p>
+                        <p>Ascendencia: ${dataArray[i].ancestry}</p>
+                        <p>Color de ojos: ${dataArray[i].eyeColour}</p>
+                        <p>Color de cabello: ${dataArray[i].hairColour}</p>
+                        <p>Actor/Actriz: ${dataArray[i].actor}</p>
+                        <p>Estado: ${dataArray[i].alive}</p><br>
+                        <h4>Varita mágica</h4>
+                        <p>Madera: ${dataArray[i].wand.wood}</p>
+                        <p>Núcleo: ${dataArray[i].wand.core}</p>
+                        <p>Longitud: ${dataArray[i].wand.length}</p>
+                        <p>Patronus: ${dataArray[i].patronus}</p>
+                    </div>
+                </div>
             </div>`;
 
-            let span = document.getElementsByClassName("close")[0];
-            span.addEventListener('click', ()=>{
-                modal.style.display = "none";
-                modalContainer.innerHTML=""; 
+            let span = document.getElementsByClassName("close")[0]; // al momento de cerrar, hace este evento/
+            span.addEventListener('click', ()=>{ //evento del click en la x
+                modal.style.display = "none"; //Escondemos el modal general
+                modalContainer.innerHTML="";  //Limpiamos el modal con la informacion (cuadrito blanco)
             });
         });
 
-        window.onclick = function(event) {
+        window.onclick = function(event) { //evento para que al hacer click fuera del modal se cierre
             if (event.target == modal) {
               modal.style.display = "none";
               modalContainer.innerHTML="";
@@ -106,3 +106,32 @@ function createModal () {
         }
     }   
 }
+
+
+//Creamos el filtro de búsqueda en tiempo real
+const filter = () =>{
+    const search = document.querySelector("#search").value;
+    characters.innerHTML = "";
+    const informationSearch = search.toLowerCase();
+    
+    for (let i=0; i<dataArray.length; i++){
+        let characterName = dataArray[i].name.toLowerCase();
+        
+        if(characterName.indexOf(informationSearch) !== -1){
+            characters.innerHTML += `
+            <div  class="root">
+                <img src="${dataArray[i].image}" alt="" class="imgButton">
+                <h3>${dataArray[i].name}</h3>
+                <p>${dataArray[i].house}</p>
+            </div>`;
+            createModal();
+        }
+    } 
+    if (characters.innerHTML === ""){
+        characters.innerHTML += `
+        <div  class="root">
+            <p>Personaje no encontrado...</p>
+        </div>`;
+    }
+}
+search.addEventListener('keyup', filter)
