@@ -134,7 +134,7 @@ Los resultados de este testeo son los siguientes:
 * La pregunta siguiente, tiene que ver con lo intuitivo que les pareció a los usuarios nuestra página, en donde calificaron con un 100%  lo intuitivo y nos nos hicieron nuevos comentarios.
 
 ![graficos](/src/imagenes/imagenesReadme/graficoCuatro.jpg) 
-![respuestas](/src/imagenes/imagenesReadme/preguntaDos.jpg) 
+![respuestas](/src/imagenes/imagenesReadme/preguntaDos.png) 
 
 * Para la quinta pregunta, cuestionamos si era legible el diseño de la página en cuanto a colores, al tamaño de la tipografía, etc. Solo el 12,5% de los encuestados, nos expreso que las tipografías no tenían una relación entre si.
 
