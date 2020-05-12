@@ -5,9 +5,9 @@
 
 <br>
 Guía muggle, es una página web que le brinda a los usuarios una biblioteca con información relevante sobre los personajes de la saga de Harry Potter. En esta web, el usuario podrá indagar sobre las casas, los patronus, las características de sus varitas, entre otras muchas peculiaridades pertenecientes a cada uno de las personalidades presentes en la película. <br>
-Esta web está dirigida a 3 tipos de usuarios (casual, aficionado y fanático),  los cuales podrán clasificar todos los personajes por orden albafético, podrán buscar por los nombres de cada uno de ellos y podrán seleccionar diferentes buscadores específicos de acuerdo a sus intereses y conocimientos.<br>
-
-• Para conocer nuestra página web [haz click aquí](blablablablablablablabla)
+Esta web está dirigida a 3 tipos de usuarios (casual, aficionado y fanático),  los cuales podrán clasificar todos los personajes por orden albafético, podrán buscar por los nombres de cada uno de ellos y podrán seleccionar diferentes buscadores específicos de acuerdo a sus intereses y conocimientos.
+<br>
+• Para conocer nuestra página web [haz click aquí](https://valeriaconstanzabc.github.io/SCL013-data-lovers/src/index.html)
 
 ***
 ## TABLA DE CONTENIDOS<br> 
@@ -32,8 +32,8 @@ todas estrenadas en el decenio comprendido entre 2001 y 2011.<br>
 
 ![HarryPotter](/src/imagenes/imagenesReadme/harryUno.jpg)
 
-• Para conocer más info sobre los libros [haz click aquí](https://es.wikipedia.org/wiki/Harry_Potter)
-• Para conocer más info sobre las pelúclas [haz click aquí](https://es.wikipedia.org/wiki/Harry_Potter_(serie_cinematogr%C3%A1fica))
+• Para conocer más info sobre los libros [haz click aquí](https://es.wikipedia.org/wiki/Harry_Potter)<br>
+• Para conocer más info sobre las películas [haz click aquí](https://es.wikipedia.org/wiki/Harry_Potter_(serie_cinematogr%C3%A1fica))<br>
 • Para conocer el juego [haz click aquí](https://www.wizardingworld.com/)
 
 ***
@@ -108,7 +108,7 @@ Al entrar a la página se entusiasmará por el recibimiento de esta, e intuitiva
 ![prototipoAltaFidelidad](/src/imagenes/imagenesReadme/prototipoDos.JPG) 
 ![prototipoAltaFidelidad](/src/imagenes/imagenesReadme/prototipoTres.JPG) 
 
-• Para conocer nuestro prototipo de alta fidelidad [haz click aquí](blablablablablabla)
+• Para conocer nuestro prototipo de alta fidelidad [haz click aquí](https://www.figma.com/proto/76yBVBhZPNfs3Tc2Cfh2RF/Untitled?node-id=173%3A1&scaling=scale-down)
 
 ***
 
