@@ -1,162 +1,8 @@
 import data from './data/potter/potter.js'
 import {orderData, filterGender, filterHouse, filterAncestry, filterStaff} from './data.js'
 
-
-//Esconde y trae la página de bienvenida y la página de información
-document.getElementById("homePage").style.display = "none";
-let enterButton = document.getElementById("enterButton");
-enterButton.addEventListener('click', ()=>{
-    document.getElementById("welcome").style.display = "none";
-    document.getElementById("homePage").style.display = "block";
-});
-
-
-//Traemos todos los personajes al inicio de la página
-const dataPotter=data;
-let dataArray=Object.values(dataPotter);
-const characters = document.getElementById("characters");
-for(let i=0;i<dataArray.length;i++){    
-   characters.innerHTML += `
-   <div  class="root">
-        <img src="${dataArray[i].image}" alt="" class="imgButton">
-        <h3>${dataArray[i].name}</h3>
-        <p>${dataArray[i].house}</p>
-    </div>`;
-    createModal();
-}
-
-
-//Ordenamos todos los personajes en orden alfabético
-const select = document.getElementById("alphabeticalSearch");
-select.addEventListener("change", () =>{
-    characters.innerHTML = "";
-    dataArray=Object.values(dataPotter);
-    let condition = select.options[select.selectedIndex].index;
-    let orderResult = orderData(dataArray, condition);
-    
-    for(let i=0;i<orderResult.length;i++){    
-        characters.innerHTML += `
-        <div id="boton" class="root">
-             <img src="${orderResult[i].image}" alt="" class="imgButton">
-             <h3>${orderResult[i].name}</h3>
-             <p>${orderResult[i].house}</p>
-         </div>`;
-         createModal();
-    }
-})
-
-
-//Creamos el filtro de búsqueda en tiempo real
-const filter = () =>{
-    const search = document.querySelector("#search").value;
-    characters.innerHTML = "";
-    
-    const informationSearch = search.toLowerCase();
-    
-    for (let i=0; i<dataArray.length; i++){
-        let characterName = dataArray[i].name.toLowerCase();
-        
-        if(characterName.indexOf(informationSearch) !== -1){
-            characters.innerHTML += `
-            <div  class="root">
-                <img src="${dataArray[i].image}" alt="" class="imgButton">
-                <h3>${dataArray[i].name}</h3>
-                <p>${dataArray[i].house}</p>
-            </div>`;
-            createModal();
-        }
-    } 
-    if (characters.innerHTML === ""){
-        characters.innerHTML += `
-        <div  class="root">
-            <p>Personaje no encontrado...</p>
-        </div>`;
-    }
-}
-search.addEventListener('keyup', filter)
-
-
-//Creamos filtro de género
-const selectGender = document.getElementById("genderSearch");
-selectGender.addEventListener("change", () =>{
-    characters.innerHTML = "";
-    
-    let gender = selectGender.options[selectGender.selectedIndex].value;
-    let genderResult = filterGender(dataArray, gender);
-    for(let i=0;i<genderResult.length;i++){    
-        characters.innerHTML += `
-        <div id="boton" class="root">
-             <img src="${genderResult[i].image}" alt="" class="imgButton">
-             <h3>${genderResult[i].name}</h3>
-             <p>${genderResult[i].house}</p>
-         </div>`;
-         createModal();
-    }
-    
-})
-
-//Creamos filtro de casa
-const selectHouse = document.getElementById("houseSearch");
-selectHouse.addEventListener("change", () =>{
-    characters.innerHTML = "";
-    
-    let house = selectHouse.options[selectHouse.selectedIndex].value;
-    console.log(house);
-    let houseResult = filterHouse(dataArray, house);
-    
-    for(let i=0;i<houseResult.length;i++){    
-        characters.innerHTML += `
-        <div id="boton" class="root">
-             <img src="${houseResult[i].image}" alt="" class="imgButton">
-             <h3>${houseResult[i].name}</h3>
-             <p>${houseResult[i].house}</p>
-         </div>`;
-         createModal();
-    }
-})
-
-//Creamos filtro de linaje
-const selectAncestry = document.getElementById("ancestrySearch");
-selectAncestry.addEventListener("change", () =>{
-    characters.innerHTML = "";
-    
-    let ancestry = selectAncestry.options[selectAncestry.selectedIndex].value;
-    console.log(ancestry);
-    let ancestryResult = filterAncestry(dataArray, ancestry);
-    
-    for(let i=0;i<ancestryResult.length;i++){    
-        characters.innerHTML += `
-        <div id="boton" class="root">
-             <img src="${ancestryResult[i].image}" alt="" class="imgButton">
-             <h3>${ancestryResult[i].name}</h3>
-             <p>${ancestryResult[i].house}</p>
-         </div>`;
-         createModal();
-    }
-})
-
-//Creamos filtro de rol profesor
-const selectStaff = document.getElementById("staffSearch");
-selectStaff.addEventListener("change", () =>{
-    characters.innerHTML = "";
-    
-    let staff = selectStaff.options[selectStaff.selectedIndex].value;
-    let staffResult = filterStaff(dataArray, staff);
-    
-    for(let i=0;i<staffResult.length;i++){    
-        characters.innerHTML += `
-        <div id="boton" class="root">
-             <img src="${staffResult[i].image}" alt="" class="imgButton">
-             <h3>${staffResult[i].name}</h3>
-             <p>${staffResult[i].house}</p>
-         </div>`;
-         createModal();
-    }
-})
-
-
 //Creamos el modal de cada personaje con su correspondiente información
-function createModal () {
+function createModal (dataArray) {
     let modal=document.getElementById("myModal"); //Modal general html
     let modalContainer = document.getElementById("modalContent"); //Modal cuadrito blanco html
     let imgButton=document.getElementsByClassName("imgButton"); //imagen que actua como boton. Ingresada en el js
@@ -217,3 +63,159 @@ function createModal () {
         }
     }   
 }
+
+//Esconde y trae la página de bienvenida y la página de información
+document.getElementById("homePage").style.display = "none";
+let enterButton = document.getElementById("enterButton");
+enterButton.addEventListener('click', ()=>{
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
+});
+
+
+//Traemos todos los personajes al inicio de la página
+const dataPotter=data;
+let dataArray=Object.values(dataPotter);
+const characters = document.getElementById("characters");
+for(let i=0;i<dataArray.length;i++){    
+   characters.innerHTML += `
+   <div  class="root">
+        <img src="${dataArray[i].image}" alt="" class="imgButton">
+        <h3>${dataArray[i].name}</h3>
+        <p>${dataArray[i].house}</p>
+    </div>`;
+    createModal(dataArray);
+}
+
+
+//Ordenamos todos los personajes en orden alfabético
+const select = document.getElementById("alphabeticalSearch");
+select.addEventListener("change", () =>{
+    characters.innerHTML = "";
+    dataArray=Object.values(dataPotter);
+    let condition = select.options[select.selectedIndex].index;
+    let orderResult = orderData(dataArray, condition);
+    
+    for(let i=0;i<orderResult.length;i++){    
+        characters.innerHTML += `
+        <div id="boton" class="root">
+             <img src="${orderResult[i].image}" alt="" class="imgButton">
+             <h3>${orderResult[i].name}</h3>
+             <p>${orderResult[i].house}</p>
+         </div>`;
+         createModal(orderResult);
+    }
+})
+
+
+//Creamos el filtro de búsqueda en tiempo real
+const search = document.querySelector("#search");
+const filter = () =>{
+    const search = document.querySelector("#search").value;
+    characters.innerHTML = "";
+    const informationSearch = search.toLowerCase();
+    
+    
+    for (let i=0; i<dataArray.length; i++){
+        let characterName = dataArray[i].name.toLowerCase();
+        
+        
+        if(characterName.indexOf(informationSearch) !== -1){
+            let searchArray = dataArray[i];
+            console.log(searchArray);
+            characters.innerHTML += `
+            <div  class="root">
+                <img src="${dataArray[i].image}" alt="" class="imgButton">
+                <h3>${dataArray[i].name}</h3>
+                <p>${dataArray[i].house}</p>
+            </div>`;
+            createModal(searchArray);
+        }
+        
+    } 
+    if (characters.innerHTML === ""){
+        characters.innerHTML += `
+        <div  class="root">
+            <p>Personaje no encontrado...</p>
+        </div>`;
+    }
+}
+search.addEventListener('keyup', filter)
+
+
+//Creamos filtro de género
+const selectGender = document.getElementById("genderSearch");
+selectGender.addEventListener("change", () =>{
+    characters.innerHTML = "";
+    
+    let gender = selectGender.options[selectGender.selectedIndex].value;
+    let genderResult = filterGender(dataArray, gender);
+    for(let i=0;i<genderResult.length;i++){    
+        characters.innerHTML += `
+        <div id="boton" class="root">
+             <img src="${genderResult[i].image}" alt="" class="imgButton">
+             <h3>${genderResult[i].name}</h3>
+             <p>${genderResult[i].house}</p>
+         </div>`;
+         createModal(genderResult);
+    }
+    
+})
+
+//Creamos filtro de casa
+const selectHouse = document.getElementById("houseSearch");
+selectHouse.addEventListener("change", () =>{
+    characters.innerHTML = "";
+    
+    let house = selectHouse.options[selectHouse.selectedIndex].value;
+    let houseResult = filterHouse(dataArray, house);
+    
+    for(let i=0;i<houseResult.length;i++){    
+        characters.innerHTML += `
+        <div id="boton" class="root">
+             <img src="${houseResult[i].image}" alt="" class="imgButton">
+             <h3>${houseResult[i].name}</h3>
+             <p>${houseResult[i].house}</p>
+         </div>`;
+         createModal(houseResult);
+    }
+})
+
+//Creamos filtro de linaje
+const selectAncestry = document.getElementById("ancestrySearch");
+selectAncestry.addEventListener("change", () =>{
+    characters.innerHTML = "";
+    
+    let ancestry = selectAncestry.options[selectAncestry.selectedIndex].value;
+    let ancestryResult = filterAncestry(dataArray, ancestry);
+    
+    for(let i=0;i<ancestryResult.length;i++){    
+        characters.innerHTML += `
+        <div id="boton" class="root">
+             <img src="${ancestryResult[i].image}" alt="" class="imgButton">
+             <h3>${ancestryResult[i].name}</h3>
+             <p>${ancestryResult[i].house}</p>
+         </div>`;
+         createModal(ancestryResult);
+    }
+})
+
+//Creamos filtro de rol profesor
+const selectStaff = document.getElementById("staffSearch");
+selectStaff.addEventListener("change", () =>{
+    characters.innerHTML = "";
+    
+    let staff = selectStaff.options[selectStaff.selectedIndex].value;
+    let staffResult = filterStaff(dataArray, staff);
+    
+    
+    for(let i=0;i<staffResult.length;i++){    
+        characters.innerHTML += `
+        <div id="boton" class="root">
+             <img src="${staffResult[i].image}" alt="" class="imgButton">
+             <h3>${staffResult[i].name}</h3>
+             <p>${staffResult[i].house}</p>
+         </div>`;
+         createModal(staffResult);
+    }
+})

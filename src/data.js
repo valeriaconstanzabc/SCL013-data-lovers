@@ -31,13 +31,13 @@ export const filterAncestry = (dataArray, ancestry) => {
   return dataAncestry;
 }
 
-
 export const filterStaff  = (dataArray, staff) => {
-  let dataStaff  = dataArray.filter (dato => dato.hogwartsStaff  ===  true);
+  if (staff=="hogwartsStaff"){
+    let dataStaff  = dataArray.filter (dato => dato.hogwartsStaff  ===  true);
      return dataStaff;
-}
-
-export const filterStuddent  = (dataArray, studdent) => {
-  let dataStuddent  = dataArray.filter (dato => dato.hogwartsStudent  ===  true);
-     return dataStuddent;
+  }
+  if (staff=="hogwartsStudent"){
+    let dataStudent  = dataArray.filter (dato => dato.hogwartsStudent  ===  true);
+   return dataStudent;
+  }
 }
