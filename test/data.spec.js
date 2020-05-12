@@ -1,4 +1,5 @@
-import orderData from '../src/data.js';
+import {orderData, filterGender} from '../src/data.js';
+
 const noOrderDataArray=[
   {
     name: 'Harry Potter',
@@ -34,6 +35,26 @@ const orderDataArray=[
     house: 'Gryffindor'
   }
 ]
+const orderMale=[
+  {
+    name: 'Ron Weasley',
+    gender: 'male',
+    house: 'Gryffindor'
+  },
+  {
+    name: 'Harry Potter',
+    gender: 'male',
+    house: 'Gryffindor'
+  }
+]
+
+const orderFemale=[
+  {
+    name: 'Hermione Granger',
+    gender: 'female',
+    house: 'Gryffindor'
+  }
+]
 
 
 describe('orderData', () => {
@@ -54,13 +75,18 @@ describe('orderData', () => {
 
 });
 
-
-/*describe('anotherExample', () => {
+describe('filterGender', () => {
+  
   test('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof filterGender).toBe('function');
   });
 
-  test('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  test('returns male', () => {
+    expect(filterGender(orderDataArray, "male")).toStrictEqual(orderMale);
   });
-});*/
+
+  test('returns female', () => {
+    expect(filterGender(orderDataArray, "female")).toStrictEqual(orderFemale);
+  });
+  
+});
