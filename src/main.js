@@ -115,12 +115,11 @@ search.addEventListener("keyup",()=>{
     let searchArray=[]; //Declaramos el nuevo arreglo para guardar los resultados de la búsqueda.
     for (let i=0; i<dataArray.length; i++){
         let characterName = dataArray[i].name.toLowerCase(); //Convertimos los nombres de la data en minúscula para comparar.
-        if(characterName.indexOf(informationSearch) !== -1){ //
+        if(characterName.indexOf(informationSearch) !== -1){ //Busca dentro de el arreglo, que exista lo que el usuario ingresa.
             searchArray.push(dataArray[i]); //Guardando resultados de la busqueda en arreglo nuevo
         }
     } 
-    console.log("SearchArray con personajes encontrados"+searchArray)
-    for(let i=0;i<searchArray.length;i++){
+    for(let i=0;i<searchArray.length;i++){ //For que recorre la data nueva e imprime los personajes.
                 characters.innerHTML += `
                 <div  class="root">
                     <img src="${searchArray[i].image}" alt="" class="imgButton">
@@ -129,7 +128,7 @@ search.addEventListener("keyup",()=>{
                 </div>`; 
                 createModal(searchArray);
     }
-    if (characters.innerHTML === ""){
+    if (characters.innerHTML === ""){ //Si el personaje no existe, imprime mensaje.
         characters.innerHTML += `
         <div  class="root">
             <p>Personaje no encontrado...</p>
