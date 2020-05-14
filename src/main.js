@@ -109,7 +109,7 @@ select.addEventListener("change", () =>{
 
 
 //Creamos el filtro de búsqueda en tiempo real
-const search = document.querySelector("#search");
+/*const search = document.querySelector("#search");
 const filter = () =>{
     const search = document.querySelector("#search").value;
     characters.innerHTML = "";
@@ -118,19 +118,23 @@ const filter = () =>{
     
     for (let i=0; i<dataArray.length; i++){
         let characterName = dataArray[i].name.toLowerCase();
-        
+        let searchArray;
         
         if(characterName.indexOf(informationSearch) !== -1){
-            let searchArray = dataArray[i];
+            searchArray=dataArray[i];
+            
+        for(let i=0;i<searchArray.length;i++){
             console.log(searchArray);
             characters.innerHTML += `
             <div  class="root">
-                <img src="${dataArray[i].image}" alt="" class="imgButton">
-                <h3>${dataArray[i].name}</h3>
-                <p>${dataArray[i].house}</p>
+                <img src="${searchArray[i].image}" alt="" class="imgButton">
+                <h3>${searchArray[i].name}</h3>
+                <p>${searchArray[i].house}</p>
             </div>`;
             createModal(searchArray);
         }
+        }
+       
         
     } 
     if (characters.innerHTML === ""){
@@ -139,9 +143,45 @@ const filter = () =>{
             <p>Personaje no encontrado...</p>
         </div>`;
     }
-}
-search.addEventListener('keyup', filter)
-
+} */
+//search.addEventListener('keyup', filter)
+search.addEventListener("keyup",()=>{
+    const search = document.querySelector("#search").value;
+    characters.innerHTML = "";
+    const informationSearch = search.toLowerCase();
+    
+    
+    let searchArray=[];
+    for (let i=0; i<dataArray.length; i++){
+        let characterName = dataArray[i].name.toLowerCase();
+        if(characterName.indexOf(informationSearch) !== -1){
+            
+            searchArray.push(dataArray[i]); //Guardando resultados de la busqueda en arreglo nuevo
+            
+            console.log("Arreglo nuevo con los resultados de busqueda");
+            console.log(searchArray);
+            
+        }
+        
+    } 
+    console.log("SearchArray con personajes encontrados"+searchArray)
+    for(let i=0;i<searchArray.length;i++){
+                console.log("Entro al for nuevo"+searchArray);
+                characters.innerHTML += `
+                <div  class="root">
+                    <img src="${searchArray[i].image}" alt="" class="imgButton">
+                    <h3>${searchArray[i].name}</h3>
+                    <p>${searchArray[i].house}</p>
+                </div>`; 
+                createModal(searchArray);
+    }
+    if (characters.innerHTML === ""){
+        characters.innerHTML += `
+        <div  class="root">
+            <p>Personaje no encontrado...</p>
+        </div>`;
+    }
+})
 
 //Creamos filtro de género
 const selectGender = document.getElementById("genderSearch");
