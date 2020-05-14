@@ -65,19 +65,19 @@ function createModal (dataArray) {
 }
 
 //Esconde y trae la página de bienvenida y la página de información
-document.getElementById("homePage").style.display = "none";
-let enterButton = document.getElementById("enterButton");
-enterButton.addEventListener('click', ()=>{
+document.getElementById("homePage").style.display = "none"; //escondemos la página de información
+let enterButton = document.getElementById("enterButton"); //Guarda boton de ingreso (sombrero)
+enterButton.addEventListener('click', ()=>{ //evento click en el botón
     document.getElementById("welcome").style.display = "none";
     document.getElementById("homePage").style.display = "block";
 });
 
 
 //Traemos todos los personajes al inicio de la página
-const dataPotter=data;
-let dataArray=Object.values(dataPotter);
+const dataPotter=data; //creamos una constante de la data que nos entregan
+let dataArray=Object.values(dataPotter);//creamos un arreglo de objetos con la data
 const characters = document.getElementById("characters");
-for(let i=0;i<dataArray.length;i++){    
+for(let i=0;i<dataArray.length;i++){    //for que recorre la data e inserta todos los personajes en la página principal
    characters.innerHTML += `
    <div  class="root">
         <img src="${dataArray[i].image}" alt="" class="imgButton">
@@ -90,13 +90,13 @@ for(let i=0;i<dataArray.length;i++){
 
 //Ordenamos todos los personajes en orden alfabético
 const select = document.getElementById("alphabeticalSearch");
-select.addEventListener("change", () =>{
-    characters.innerHTML = "";
-    dataArray=Object.values(dataPotter);
-    let condition = select.options[select.selectedIndex].index;
-    let orderResult = orderData(dataArray, condition);
+select.addEventListener("change", () =>{ //creamos un listener para cuando se produzca un cambio en el selector.
+    characters.innerHTML = ""; //limpia el div que contiene la información
+    dataArray=Object.values(dataPotter); //resetear el orden original de los personajes
+    let condition = select.options[select.selectedIndex].index; //guardamos la condición que el usuario seleccionó
+    let orderResult = orderData(dataArray, condition); //creamos una nueva variable para el nuevo orden de personajes
     
-    for(let i=0;i<orderResult.length;i++){    
+    for(let i=0;i<orderResult.length;i++){    //volvemos a colocar los nuevos personajes en el div
         characters.innerHTML += `
         <div id="boton" class="root">
              <img src="${orderResult[i].image}" alt="" class="imgButton">
@@ -107,40 +107,35 @@ select.addEventListener("change", () =>{
     }
 })
 
-
-//Creamos el filtro de búsqueda en tiempo real
-const search = document.querySelector("#search");
-const filter = () =>{
-    const search = document.querySelector("#search").value;
+//Búsqueda de personajes en tiempo real
+search.addEventListener("keyup",()=>{
+    const search = document.querySelector("#search").value; //Traemos la información que ingresa el usuario.
     characters.innerHTML = "";
-    const informationSearch = search.toLowerCase();
-    
-    
+    const informationSearch = search.toLowerCase(); //convierte lo que ingresa el usuario en minúscula.
+    let searchArray=[]; //Declaramos el nuevo arreglo para guardar los resultados de la búsqueda.
     for (let i=0; i<dataArray.length; i++){
-        let characterName = dataArray[i].name.toLowerCase();
-        
-        
-        if(characterName.indexOf(informationSearch) !== -1){
-            let searchArray = dataArray[i];
-            console.log(searchArray);
-            characters.innerHTML += `
-            <div  class="root">
-                <img src="${dataArray[i].image}" alt="" class="imgButton">
-                <h3>${dataArray[i].name}</h3>
-                <p>${dataArray[i].house}</p>
-            </div>`;
-            createModal(searchArray);
+        let characterName = dataArray[i].name.toLowerCase(); //Convertimos los nombres de la data en minúscula para comparar.
+        if(characterName.indexOf(informationSearch) !== -1){ //
+            searchArray.push(dataArray[i]); //Guardando resultados de la busqueda en arreglo nuevo
         }
-        
     } 
+    console.log("SearchArray con personajes encontrados"+searchArray)
+    for(let i=0;i<searchArray.length;i++){
+                characters.innerHTML += `
+                <div  class="root">
+                    <img src="${searchArray[i].image}" alt="" class="imgButton">
+                    <h3>${searchArray[i].name}</h3>
+                    <p>${searchArray[i].house}</p>
+                </div>`; 
+                createModal(searchArray);
+    }
     if (characters.innerHTML === ""){
         characters.innerHTML += `
         <div  class="root">
             <p>Personaje no encontrado...</p>
         </div>`;
     }
-}
-search.addEventListener('keyup', filter)
+})
 
 
 //Creamos filtro de género
