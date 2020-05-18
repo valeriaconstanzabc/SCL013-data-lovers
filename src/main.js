@@ -27,7 +27,7 @@ function createModal (dataArray) {
                         <p>${dataArray[i].house}</p>
                     </div>
                     <div class="characterInformation2">
-                        <p><strong>Especie:</strong> ${dataArray[i].species}</p>
+                        <p><strong>Especie:</strong> ${translate(dataArray[i].species)}</p>
                         <p><strong>Género:</strong> ${dataArray[i].gender}</p>
                         <p><strong>Fecha de nacimiento:</strong> ${dataArray[i].dateOfBirth}</p>
                         <p><strong>Año de nacimiento:</strong> ${dataArray[i].yearOfBirth}</p>
@@ -35,7 +35,7 @@ function createModal (dataArray) {
                         <p><strong>Color de ojos:</strong> ${dataArray[i].eyeColour}</p>
                         <p><strong>Color de cabello:</strong> ${dataArray[i].hairColour}</p>
                         <p><strong>Actor/Actriz:</strong> ${dataArray[i].actor}</p>
-                        <p><strong>Estado:</strong> ${dataArray[i].alive}</p><br>
+                        <p><strong>Estado:</strong> ${dataArray[i].alive ? "Vivo" : "Muerto"}</p><br>
                         <h3><strong>Varita mágica</strong></h3>
                         <p><strong>Madera:</strong> ${dataArray[i].wand.wood}</p>
                         <p><strong>Núcleo:</strong> ${dataArray[i].wand.core}</p>
@@ -102,8 +102,9 @@ select.addEventListener("change", () =>{ //creamos un listener para cuando se pr
 
 
 //Búsqueda de personajes en tiempo real
+let search = document.getElementById("search");
 search.addEventListener("keyup",()=>{
-    const search = document.querySelector("#search").value; //Traemos la información que ingresa el usuario.
+    let search = document.querySelector("#search").value; //Traemos la información que ingresa el usuario.
     characters.innerHTML = "";
     const informationSearch = search.toLowerCase(); //convierte lo que ingresa el usuario en minúscula.
     let searchArray=[]; //Declaramos el nuevo arreglo para guardar los resultados de la búsqueda.
@@ -202,14 +203,33 @@ selectStaff.addEventListener("change", () =>{
     }
 })
 
-function translate(dataArray){
+/*function translate(dataArray){
     let traduccion= [];
     for(let i=0; i<dataArray.length;i++){
-      if(dataArray[i] == ["human"]){
-        traduccion.push(["Humano"]);
-      }else if (dataArray[i] == "male"){
-        traduccion.push("Hombre");
-        }
+        if(dataArray[i] === "human"){
+            console.log(dataArray[i]);
+            traduccion.push("Humano");
+        }else if (dataArray[i] == "male"){
+            traduccion.push("Hombre");
+        }else
+            traduccion.push("No existe");
     }
     return traduccion;
+}*/
+
+function translate(dataArray){
+    let traduccion= dataArray.replace("human","Humano");
+    return traduccion;
+    
 }
+
+/*function translate(dataArray){
+    let traduccion= [];
+    for(let i=0; i<dataArray.length;i++){
+        if(dataArray[i].species == "human"){
+            dataArray.replace("human","Humano");
+        } 
+       traduccion = dataArray.replace("cat","Gato");
+    }
+    return traduccion;
+}*/
