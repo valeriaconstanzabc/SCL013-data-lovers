@@ -27,7 +27,7 @@ function createModal (dataArray) {
                         <p>${dataArray[i].house}</p>
                     </div>
                     <div class="characterInformation2">
-                        <p><strong>Especie:</strong> ${translate(dataArray[i].species)}</p>
+                        <p><strong>Especie:</strong> ${dataArray[i].species}</p>
                         <p><strong>Género:</strong> ${dataArray[i].gender}</p>
                         <p><strong>Fecha de nacimiento:</strong> ${dataArray[i].dateOfBirth}</p>
                         <p><strong>Año de nacimiento:</strong> ${dataArray[i].yearOfBirth}</p>
@@ -202,34 +202,3 @@ selectStaff.addEventListener("change", () =>{
          createModal(staffResult);
     }
 })
-
-/*function translate(dataArray){
-    let traduccion= [];
-    for(let i=0; i<dataArray.length;i++){
-        if(dataArray[i] === "human"){
-            console.log(dataArray[i]);
-            traduccion.push("Humano");
-        }else if (dataArray[i] == "male"){
-            traduccion.push("Hombre");
-        }else
-            traduccion.push("No existe");
-    }
-    return traduccion;
-}*/
-
-function translate(dataArray){
-    let traduccion= dataArray.replace("human","Humano");
-    return traduccion;
-    
-}
-
-/*function translate(dataArray){
-    let traduccion= [];
-    for(let i=0; i<dataArray.length;i++){
-        if(dataArray[i].species == "human"){
-            dataArray.replace("human","Humano");
-        } 
-       traduccion = dataArray.replace("cat","Gato");
-    }
-    return traduccion;
-}*/
