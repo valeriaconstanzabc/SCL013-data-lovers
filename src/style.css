@@ -7,7 +7,7 @@
     cursor: url(http://cur.cursors-4u.net/others/oth-3/oth246.cur), progress;
     /*cursor: url(http://cur.cursors-4u.net/others/oth-3/oth267.cur), progress;*/
     /*cursor: url(http://cur.cursors-4u.net/others/oth-3/oth269.cur), progress;*/
-    
+
 }
 
 /*-----------------------------------------------------------------------------
@@ -42,8 +42,8 @@
                 display: flex;
 	            justify-content: flex-end;
                 align-items: flex-start;
-                align-content: stretch; 
-                
+                align-content: stretch;
+
 
                 font-family: 'Fontdiner Swanky', cursive;
                 font-style: normal;
@@ -54,7 +54,7 @@
                 color: rgb(255, 255, 255);
             }
 
-            #instructions{   
+            #instructions{
                 height: 280px;
                 width: 50%;
 
@@ -62,7 +62,7 @@
                 display: flex;
                 justify-content: flex-start;
                 align-content: center;
-                
+
                 font-family: 'Abel', sans-serif;
                 font-style: normal;
                 font-weight: normal;
@@ -70,7 +70,7 @@
                 line-height: 20px;
                 color: #D8D2D2;
             }
-        
+
         #siguiente{
             display: flex;
             flex-flow: column nowrap;
@@ -95,7 +95,7 @@
     #header{
         flex-direction: column;
         padding: 0px 0px 0px 40px;
-    } 
+    }
     #mainTitle{
         text-align: center;
     }
@@ -112,7 +112,7 @@
         width: 250px;
         padding: 0px 0px 0px 35px;
     }
-    
+
 }
 
 @media all and (max-width: 360rem) {
@@ -210,13 +210,13 @@
                 align-content: center;
                 margin: 30px 0px 50px 0px;
             }
-       
+
                 #searchCriteria label{
                     font-family: 'Abel', sans-serif;
                     font-size: 18px;
                     color: rgb(214, 212, 212);
                     margin: 0px 0px 0px 10px;
-                    
+
                 }
                 #searchCriteria input{
                     font-family: 'Abel', sans-serif;
@@ -234,7 +234,7 @@
                     border-radius: 5px;
                     cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), pointer;
                 }
-                
+
             #returnButton{
                 display: flex;
                 flex-wrap: wrap;
@@ -247,7 +247,7 @@
                     background: url("imagenes/volver.png");
                     background-size: 100px 100px;
                     background-repeat: no-repeat;
-        
+
                     transition: 0.3s;
                     cursor: url(http://cur.cursors-4u.net/others/oth-3/oth246.cur), pointer;
                 }
@@ -268,7 +268,7 @@
                     display: flex;
                     flex-wrap: wrap;
                     flex-direction: column;
-                    
+
                     font-family: 'Abel', sans-serif;
                     text-align: center;
                     font-size: 18px;
@@ -277,7 +277,7 @@
                     padding: 10px 50px 0px 50px;
                     margin: 0px 0px 20px 0px;
                 }
-                
+
                 .root > img{
                     width: 200px;
                     height: 200px;
@@ -290,7 +290,7 @@
                     box-shadow: 0 5px 50px 0;
                     transform: scale(0.9);
                 }
-   
+
         #creators{
             background: rgb(0, 0, 0, .7);
             border-radius: 10px;
@@ -312,30 +312,30 @@
 .modal {
     position: fixed; /*Se queda en el lugar fijo*/
     z-index: 1; /*Trae el modal al frente*/
-    padding-top: 160px; 
+    padding-top: 160px;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     overflow: auto; /*Se habilita el scroll si es necesario*/
     background-color: rgba(0,0,0,0.7);
 }
 
 .modalContent {
     background-color: #C4C4C4;
-    margin: auto; 
+    margin: auto;
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #888;
     width: 50%;
     height: 480px;
-    
+
 }
     .frame{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        
+
         border: #000 4px solid;
         border-radius: 20px;
         padding: 30px;
@@ -351,7 +351,7 @@
         .characterInformation{
             padding: 0px 0px 0px 30px;
             font-family: 'Abel', sans-serif;
-            font-size: 40px;
+            font-size: 40px;c
             line-height: 50px;
             text-align: center;
             color: #000;
@@ -362,7 +362,7 @@
                 border-radius: 50%;
                 object-fit: cover; /*para que la imagen no quede chatita*/
             }
-        
+
         .characterInformation2{
             padding: 5px 30px 30px 70px;
             font-family: 'Abel', sans-serif;
@@ -438,7 +438,7 @@
 }
 
 @media all and (max-width: 727px){
-    #header2{height: 270px;}   
+    #header2{height: 270px;}
 }
 
 @media all and (max-width: 632px){
@@ -484,7 +484,7 @@
 }
 
 @media all and (max-width: 425px){
-    #modalContent{height: 1100px;}   
+    #modalContent{height: 1100px;}
 }
 
 @media all and (max-width: 380px){
